@@ -1,6 +1,6 @@
 import Foundation
 
-class Request {
+public class Request {
     var verb : String?
     var scheme : String?
     var host : String?
