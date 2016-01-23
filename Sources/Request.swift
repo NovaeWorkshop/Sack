@@ -7,8 +7,8 @@ public class Request {
     public var path : String?
     public var port : Int?
 
-    public func init () {
-        
+    public init () {
+
     }
 
     public var fullpath : String? {
