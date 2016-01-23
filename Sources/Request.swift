@@ -1,13 +1,17 @@
 import Foundation
 
 public class Request {
-    var verb : String?
-    var scheme : String?
-    var host : String?
-    var path : String?
-    var port : Int?
+    public var verb : String?
+    public var scheme : String?
+    public var host : String?
+    public var path : String?
+    public var port : Int?
 
-    var fullpath : String? {
+    public func init () {
+        
+    }
+
+    public var fullpath : String? {
         set {
             if (newValue == nil) {
                 return
