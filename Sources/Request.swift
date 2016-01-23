@@ -9,10 +9,15 @@ class Request {
 
     var fullpath : String? {
         set {
-            let str = newValue
+            if (newValue == nil) {
+                return
+            }
+            let str = newValue!
+            let nsStr = str as NSString
             _fullpath = String(str)
             let regex = try! NSRegularExpression(pattern: "^(.+?):\\/\\/(.+?)(?::([0-9]{1,5}))?(\\/.*)?$", options: [])
-            let matches = regex.matchesInString(str!, options: [], range: NSRange(location: 0, length: str!.characters.count))
+            let matches = regex.matchesInString(str, options: [], range: NSMakeRange(0, nsStr.length))
+            scheme = nsStr.substringWithRange(matches[1].range)
         }
         get {
             return _fullpath
