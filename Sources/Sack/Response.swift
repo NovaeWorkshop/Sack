@@ -1,3 +1,5 @@
-class Response {
+public class Response {
+    public init () {
 
+    }
 }
